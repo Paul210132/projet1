@@ -1,4 +1,4 @@
-package com.adaming.myapp.dao;
+ package com.adaming.myapp.dao;
 
 import java.util.List;
 
