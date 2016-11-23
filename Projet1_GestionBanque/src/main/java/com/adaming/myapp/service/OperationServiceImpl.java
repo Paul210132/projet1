@@ -16,7 +16,6 @@ public class OperationServiceImpl implements IOperationService{
 	
 	private IOperationDao dao;
 	private final Logger LOGGER  = Logger.getLogger("OperationServiceImpl");
-	List<Operation> operations = getAll();
 	Date date = new Date();
 	
 	public void setDao(IOperationDao dao) {
@@ -33,6 +32,7 @@ public class OperationServiceImpl implements IOperationService{
 	@Override
 	public Operation update(Operation entity) throws OperationExistanteException {
 		int i = 0;
+		List<Operation> operations = getAll();
         for (Operation c1 : operations){
             if(c1.getId()==entity.getId()){
                 i++;
@@ -49,6 +49,7 @@ public class OperationServiceImpl implements IOperationService{
 	@Override
 	public Operation getOne(Long id) throws OperationExistanteException {
 		int i = 0;
+		List<Operation> operations = getAll();
         for (Operation c1 : operations){
             if(c1.getId()==id){
                 i++;
@@ -71,6 +72,7 @@ public class OperationServiceImpl implements IOperationService{
 	@Override
 	public Operation remove(Long id) throws OperationExistanteException {
 		int i = 0;
+		List<Operation> operations = getAll();
         for (Operation c1 : operations){
             if(c1.getId()==id){
                 i++;

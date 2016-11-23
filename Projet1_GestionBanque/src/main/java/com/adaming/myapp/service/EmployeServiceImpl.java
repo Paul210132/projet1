@@ -14,7 +14,6 @@ public class EmployeServiceImpl implements IEmployeService{
 	
 	private IEmployeDao dao;
 	private final Logger LOGGER  = Logger.getLogger("EmployeServiceImpl");
-	List<Employe> employes = getAll();
 	
 	public void setDao(IEmployeDao dao) {
 		LOGGER.info("<---------- dao injected------->");
@@ -30,6 +29,7 @@ public class EmployeServiceImpl implements IEmployeService{
 	@Override
 	public Employe update(Employe entity) throws EmployeExistantException {
 		int i = 0;
+		List<Employe> employes = getAll();
         for (Employe c1 : employes){
             if(c1.getId()==entity.getId()){
                 i++;
@@ -46,6 +46,7 @@ public class EmployeServiceImpl implements IEmployeService{
 	@Override
 	public Employe getOne(Long id) throws EmployeExistantException {
 		int i = 0;
+		List<Employe> employes = getAll();
         for (Employe c1 : employes){
             if(c1.getId()==id){
                 i++;
@@ -68,6 +69,7 @@ public class EmployeServiceImpl implements IEmployeService{
 	@Override
 	public Employe remove(Long id) throws EmployeExistantException {
 		int i = 0;
+		List<Employe> employes = getAll();
         for (Employe c1 : employes){
             if(c1.getId()==id){
                 i++;
