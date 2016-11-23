@@ -7,6 +7,7 @@ import com.adaming.myapp.persistence.AbstractJPA;
 
 public class BanqueDaoImpl extends AbstractJPA<Banque> implements IBanqueDao{
 
+	
 	@Override
 	public Banque save(Banque entity) {
 		// TODO Auto-generated method stub

@@ -7,13 +7,17 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 
-<!-- 	 injcetion de dépendance 
-      <bean id="clientDaoImpl" class="com.adaming.myapp.dao.ClientDaoImpl"></bean>
-     <bean id="clientServiceImpl" class="com.adaming.myapp.service.ClientServiceImpl">
-         <property name="dao" ref="clientDaoImpl"></property>
+<!-- 	 injcetion de dépendance -->
+     <bean id="GroupeDaoImpl" class="com.adaming.myapp.dao.GroupeDaoImpl"></bean>
+     <bean id="GroupeServiceImpl" class="com.adaming.myapp.service.GroupeServiceImpl">
+         <property name="gdao" ref="GroupeDaoImpl"></property>
+     </bean> 
+     <bean id="CompteDaoImpl" class="com.adaming.myapp.dao.CompteDaoImpl"></bean>
+     <bean id="CompteServiceImpl" class="com.adaming.myapp.service.CompteServiceImpl">
+         <property name="cdao" ref="CompteDaoImpl"></property>
      </bean> 
 
-	configuration jpa/spring -->
+	<!-- configuration jpa/spring -->
 
 	<bean id="datasource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
