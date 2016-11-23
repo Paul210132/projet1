@@ -43,4 +43,10 @@ public class EmployeDaoImpl extends AbstractJPA<Employe> implements IEmployeDao{
 		return groupe.getEmployes();
 	}
 
+	@Override
+	public Groupe getGroupe(Long idGroupe) {
+		Groupe groupe = em.find(Groupe.class, idGroupe);
+		return groupe;
+	}
+
 }

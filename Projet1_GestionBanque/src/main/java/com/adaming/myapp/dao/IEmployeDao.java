@@ -9,4 +9,5 @@ public interface IEmployeDao extends IGenericDao<Employe>{
 
 	List<Employe> getEmploye(Long idGroupe);
 	
+	Groupe getGroupe(Long idGroupe);
 }

@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="TYPE",discriminatorType=DiscriminatorType.STRING)
-public class Compte implements Serializable{
+public abstract class Compte implements Serializable{
 
 	
 	/*ATTRIBUTES*/
@@ -86,7 +86,7 @@ public class Compte implements Serializable{
 		this.employe = employe;
 	}
 	
-	
+	public abstract Double getCalcul();
 	
 	
 }

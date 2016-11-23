@@ -15,9 +15,11 @@ public class Retrait extends Operation{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Retrait(Long id, Date date, Double montant, Employe employe, List<Compte> comptes) {
-		super(id, date, montant, employe, comptes);
+	public Retrait(Long id, Date date, Double montant) {
+		super(id, date, montant);
 		// TODO Auto-generated constructor stub
 	}
+
+	
 
 }

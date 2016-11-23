@@ -10,8 +10,10 @@ import javax.persistence.*;
 @DiscriminatorValue("VER")
 public class Versement extends Operation{
 
-	public Versement(Long id, Date date, Double montant, Employe employe, List<Compte> comptes) {
-		super(id, date, montant, employe, comptes);
+
+
+	public Versement(Long id, Date date, Double montant) {
+		super(id, date, montant);
 		// TODO Auto-generated constructor stub
 	}
 

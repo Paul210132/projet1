@@ -15,9 +15,10 @@ public class Virement extends Operation{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Virement(Long id, Date date, Double montant, Employe employe, List<Compte> comptes) {
-		super(id, date, montant, employe, comptes);
+	public Virement(Long id, Date date, Double montant) {
+		super(id, date, montant);
 		// TODO Auto-generated constructor stub
 	}
+
 
 }

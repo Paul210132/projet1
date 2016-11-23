@@ -39,5 +39,10 @@ public class CompteEpargne extends Compte{
 	public void settInteret(Double tInteret) {
 		this.tInteret = tInteret;
 	}
+	@Override
+	public Double getCalcul() {
+		// TODO Auto-generated method stub
+		return tInteret;
+	}
 
 }

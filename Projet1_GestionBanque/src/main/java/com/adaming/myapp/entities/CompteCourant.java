@@ -39,6 +39,11 @@ public class CompteCourant extends Compte{
 	public void setDecouvert(Double decouvert) {
 		this.decouvert = decouvert;
 	}
+	@Override
+	public Double getCalcul() {
+		// TODO Auto-generated method stub
+		return decouvert;
+	}
 
 }
 

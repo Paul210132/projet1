@@ -38,25 +38,24 @@ public class Operation implements Serializable{
 	
 	/*CONSTRUCTORS*/
 	
-	public Operation(Long id, Date date, Double montant, Employe employe, List<Compte> comptes) {
+public Long getId() {
+		return id;
+	}
+	public Operation(Long id, Date date, Double montant) {
 		super();
 		this.id = id;
 		this.date = date;
 		this.montant = montant;
-		this.employe = employe;
-		this.comptes = comptes;
 	}
+	
 	public Operation(Date date, Double montant) {
 		super();
 		this.date = date;
 		this.montant = montant;
 	}
-	
 	/*GETTERS-SETTERS*/
 	
-	public Long getId() {
-		return id;
-	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
