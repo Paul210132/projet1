@@ -13,6 +13,6 @@ public interface IGroupeService {
 	public Groupe getOne(Long id) throws GroupeExistantException;
 	public List<Groupe> getAll();
 	public Groupe remove(Long id) throws GroupeExistantException;
-	public Employe addEmploye(Long idGroupe, Long idEmploye) throws GroupeExistantException;
+	Groupe addEmployeToGroupe(Long idGroupe, Long idEmploye);
 
 }

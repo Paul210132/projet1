@@ -32,7 +32,7 @@ public class GroupeServiceImpl implements IGroupeService{
 	}
 
 	@Override
-	public Groupe update(Groupe entity) throws GroupeExistantException {
+	public Groupe update(Groupe entity) throws GroupeExistantException{
 		List<Groupe> groupes = getAll();
 		int i = 0;
 		for (Groupe g1 : groupes){
@@ -87,21 +87,14 @@ public class GroupeServiceImpl implements IGroupeService{
 	}
 
 	@Override
-	public Employe addEmploye(Long idGroupe, Long idEmploye) throws GroupeExistantException {
-		List<Groupe> groupes = getAll();
-		int i = 0;
-		for (Groupe g1 : groupes){
-			for (Employe e1 : g1.getEmployes())
-				if(e1.getId()==idEmploye){
-					i++;
-				}
-		}
-		if (i==0){
-			throw new GroupeExistantException("Il n'existe aucun employé");}
-		else{
-			return gdao.addEmploye(idGroupe, idEmploye);
-		}
+	public Groupe addEmployeToGroupe(Long idGroupe, Long idEmploye) {
+		LOGGER.info("L'employé a bien été ajouté au groupe");
+		return gdao.addEmployeToGroupe(idGroupe, idEmploye);
 	}
+
+	
+
+
 	
 	
 

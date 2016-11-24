@@ -1,6 +1,7 @@
 package com.adaming.myapp.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -15,9 +16,9 @@ public class Groupe implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String nom;
-	@OneToMany
-	@JoinTable(name="EMPLOYES_GRP")
-	private List<Employe> employes;
+	@OneToMany(fetch=FetchType.EAGER)
+	@JoinColumn(name="EMPLOYES_GRP")
+	private List<Employe> employes = new ArrayList<Employe>();
 	
 	/*CONSTRUCTORS*/
 	

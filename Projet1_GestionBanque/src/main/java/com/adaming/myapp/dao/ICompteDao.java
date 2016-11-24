@@ -10,4 +10,5 @@ public interface ICompteDao extends IGenericDao<Compte>{
 	public List<Compte> getCompteByClient(Long idClient);
 	public List<Compte> getCompteByEmploye(Long idEmploye);
 
+
 }

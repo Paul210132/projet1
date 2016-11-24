@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.adaming.myapp.dao.ICompteDao;
 import com.adaming.myapp.entities.Compte;
+import com.adaming.myapp.entities.CompteCourant;
 import com.adaming.myapp.exceptions.CompteExistantException;
 import com.adaming.myapp.exceptions.GroupeExistantException;
 
@@ -50,7 +51,7 @@ public class CompteServiceImpl implements ICompteService{
 	@Override
 	public Compte getOne(Long id) throws CompteExistantException {
 		List<Compte> comptes = getAll();
-		int i = 0;
+		int i = 1;
 		for (Compte c1 : comptes){
 			if(c1.getId()==id){
 				i++;
@@ -120,5 +121,9 @@ public class CompteServiceImpl implements ICompteService{
 			return cdao.getCompteByEmploye(idEmploye);
 		}
 	}
+
+
+
+
 
 }

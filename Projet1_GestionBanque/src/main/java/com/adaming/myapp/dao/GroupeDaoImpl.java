@@ -38,11 +38,16 @@ public class GroupeDaoImpl extends AbstractJPA<Groupe> implements IGroupeDao{
 	}
 
 	@Override
-	public Employe addEmploye(Long idGroupe, Long idEmploye) {
+	public Groupe addEmployeToGroupe(Long idGroupe, Long idEmploye) {
 		Employe employe = em.find(Employe.class, idEmploye);
 		Groupe groupe = em.find(Groupe.class, idGroupe);
+		System.out.println("blabla");
 		groupe.getEmployes().add(employe);
-		return employe;
+		System.out.println("blabla");
+		return groupe;
 	}
+
+
+
 
 }

@@ -16,5 +16,6 @@ public interface ICompteService {
 	public Compte remove(Long id)throws CompteExistantException;
 	public List<Compte> getCompteByClient(Long idClient) throws CompteExistantException;
 	public List<Compte> getCompteByEmploye(Long idEmploye) throws GroupeExistantException;
+	
 		
 	}

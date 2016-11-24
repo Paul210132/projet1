@@ -1,9 +1,11 @@
  package com.adaming.myapp.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import com.adaming.myapp.entities.Client;
 import com.adaming.myapp.entities.Compte;
+import com.adaming.myapp.entities.CompteCourant;
 import com.adaming.myapp.entities.Employe;
 import com.adaming.myapp.persistence.AbstractJPA;
 
@@ -14,7 +16,7 @@ public class CompteDaoImpl extends AbstractJPA<Compte>implements ICompteDao{
 		// TODO Auto-generated method stub
 		return saveAbstractJpa(entity);
 	}
-
+	
 	@Override
 	public Compte update(Compte entity) {
 		// TODO Auto-generated method stub
@@ -54,6 +56,6 @@ public class CompteDaoImpl extends AbstractJPA<Compte>implements ICompteDao{
 
 	
 
-	
+
 
 }

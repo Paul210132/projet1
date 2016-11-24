@@ -5,6 +5,6 @@ import com.adaming.myapp.persistence.IGenericDao;
 
 public interface IGroupeDao extends IGenericDao<Groupe>{
 
-	Employe addEmploye(Long idGroupe, Long idEmploye);
+	Groupe addEmployeToGroupe(Long idGroupe, Long idEmploye);
 	
 }
