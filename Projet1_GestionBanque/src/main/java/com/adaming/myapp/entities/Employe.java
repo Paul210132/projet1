@@ -21,6 +21,10 @@ public class Employe implements Serializable{
 	
 	/*CONSTRUCTORS*/
 	
+	public Employe() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Employe(Long id, String nom, List<Compte> comptes) {
 		super();
 		this.id = id;

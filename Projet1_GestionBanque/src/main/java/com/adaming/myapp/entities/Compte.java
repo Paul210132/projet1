@@ -30,6 +30,10 @@ public abstract class Compte implements Serializable{
 	private Employe employe;
 	/*CONSTRUCTORS*/
 	
+	public Compte() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Compte(Long id, Date dateCreation, Double solde, List<Operation> operations, Client client,
 			Employe employe) {
 		super();

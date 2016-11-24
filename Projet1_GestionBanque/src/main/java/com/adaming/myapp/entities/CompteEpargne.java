@@ -16,6 +16,10 @@ public class CompteEpargne extends Compte{
 	
 	/*CONSTRUCTORS*/
 
+	public CompteEpargne() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public CompteEpargne(Long id, Date dateCreation, Double solde, List<Operation> operations, Client client,
 			Employe employe) {
 		super(id, dateCreation, solde, operations, client, employe);

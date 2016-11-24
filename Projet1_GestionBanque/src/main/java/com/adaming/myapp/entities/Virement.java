@@ -10,6 +10,11 @@ import javax.persistence.*;
 @DiscriminatorValue("VIR")
 public class Virement extends Operation{
 
+	public Virement() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Virement(Date date, Double montant) {
 		super(date, montant);
 		// TODO Auto-generated constructor stub

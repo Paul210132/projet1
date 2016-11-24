@@ -21,6 +21,10 @@ public class Groupe implements Serializable{
 	
 	/*CONSTRUCTORS*/
 	
+	public Groupe() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Groupe(Long id, String nom, List<Employe> employes) {
 		super();
 		this.id = id;

@@ -38,9 +38,10 @@ public class Operation implements Serializable{
 	
 	/*CONSTRUCTORS*/
 	
-public Long getId() {
-		return id;
+	public Operation() {
+		// TODO Auto-generated constructor stub
 	}
+	
 	public Operation(Long id, Date date, Double montant) {
 		super();
 		this.id = id;
@@ -55,7 +56,9 @@ public Long getId() {
 	}
 	/*GETTERS-SETTERS*/
 	
-	
+	public Long getId() {
+		return id;
+	}
 	public void setId(Long id) {
 		this.id = id;
 	}

@@ -28,6 +28,10 @@ public class Banque implements Serializable{
 
 	/*CONSTRUCTORS*/
 	
+	public Banque() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Banque(Long id, String nom, String adresse, int cP, List<Employe> employes, List<Client> clients,
 			List<Compte> comptes) {
 		super();

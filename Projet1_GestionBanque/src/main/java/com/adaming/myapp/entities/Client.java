@@ -25,6 +25,10 @@ public class Client implements Serializable{
 
 	/*CONSTRUCTORS*/
 	
+	public Client() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Client(Long id, String nom, String prenom, Date dateNaissance, String adresse, List<Compte> comptes) {
 		super();
 		this.id = id;

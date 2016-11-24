@@ -21,6 +21,10 @@ public class CompteCourant extends Compte{
 		super(id, dateCreation, solde, operations, client, employe);
 		// TODO Auto-generated constructor stub
 	}
+	public CompteCourant() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public CompteCourant(Date dateCreation, Double solde, Client client) {
 		super(dateCreation, solde, client);
 		// TODO Auto-generated constructor stub

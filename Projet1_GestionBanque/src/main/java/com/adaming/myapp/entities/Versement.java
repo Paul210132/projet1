@@ -12,6 +12,11 @@ public class Versement extends Operation{
 
 
 
+	public Versement() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Versement(Long id, Date date, Double montant) {
 		super(id, date, montant);
 		// TODO Auto-generated constructor stub

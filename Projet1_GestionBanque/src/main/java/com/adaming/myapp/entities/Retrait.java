@@ -10,6 +10,11 @@ import javax.persistence.*;
 @DiscriminatorValue("RET")
 public class Retrait extends Operation{
 
+	public Retrait() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Retrait(Date date, Double montant) {
 		super(date, montant);
 		// TODO Auto-generated constructor stub
