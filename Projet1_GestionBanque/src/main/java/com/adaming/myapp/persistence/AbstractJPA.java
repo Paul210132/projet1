@@ -1,6 +1,7 @@
 package com.adaming.myapp.persistence;
 
 import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -12,7 +13,10 @@ public abstract class AbstractJPA<T extends Serializable>{
 	protected EntityManager em;
 	
 	private Class <T> cl;
-	
+	@SuppressWarnings("unchecked")
+	public AbstractJPA() {
+		this.cl = (Class <T> )(  (ParameterizedType)  (getClass().getGenericSuperclass())).getActualTypeArguments()[0];
+	}
     public T saveAbstractJpa(T entity){
     	em.persist(entity);
     	return entity;
