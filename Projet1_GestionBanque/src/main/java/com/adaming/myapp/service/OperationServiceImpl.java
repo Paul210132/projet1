@@ -39,7 +39,8 @@ public class OperationServiceImpl implements IOperationService{
             }
         }
         if (i==0){
-            throw new OperationExistanteException("L'opération n'existe pas");}
+            throw new OperationExistanteException("L'opération n'existe pas");
+            }
         else{
         	LOGGER.info("<---------- Operation updated------->");
         	return dao.update(entity);
