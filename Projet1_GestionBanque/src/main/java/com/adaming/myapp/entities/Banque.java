@@ -16,13 +16,13 @@ public class Banque implements Serializable{
 	private String nom;
 	private String adresse;
 	private int cP;
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name="EMPLOYES_BQ")
 	private List<Employe> employes;
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name="CLIENTS_BQ")
 	private List<Client> clients;
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name="COMPTES_BQ")
 	private List<Compte> comptes;
 

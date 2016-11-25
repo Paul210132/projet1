@@ -20,7 +20,7 @@ public class Client implements Serializable{
 	private String prenom;
 	private Date dateNaissance;
 	private String adresse;
-	@OneToMany(mappedBy="client")
+	@OneToMany(mappedBy="client", fetch = FetchType.EAGER)
 	private List<Compte> comptes;
 
 	/*CONSTRUCTORS*/
