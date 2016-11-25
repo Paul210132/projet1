@@ -7,7 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.adaming.myapp.dao.IBanqueDao;
 import com.adaming.myapp.entities.Banque;
-
+import com.adaming.myapp.entities.Client;
+import com.adaming.myapp.entities.Compte;
+import com.adaming.myapp.entities.Employe;
 import com.adaming.myapp.exceptions.BanqueExistanteException;
 
 
@@ -87,6 +89,35 @@ public class BanqueServiceImpl implements IBanqueService{
 	public Banque remove(Long id) {
 		// TODO Auto-generated method stub
 		return dao.remove(id);
+	}
+
+	@Override
+	public Banque AddCompteToBanque(Compte c, Long idBanque) throws BanqueExistanteException {
+		List<Banque> banques = getAll();
+		int i = 0;
+        for (Banque b1 : banques){
+            if(b1.getId()==idBanque){
+                i++;
+            }
+        }
+        if (i==0){
+            throw new BanqueExistanteException("La banque n'existe pas");
+        }else{
+        	LOGGER.info("Le compte a bien été ajouté à la banque");
+        	return dao.AddCompteToBanque(c, idBanque);
+        }
+	}
+
+	@Override
+	public Banque AddClientToBanque(Client c, Long idBanque) {
+		// TODO Auto-generated method stub
+		return dao.AddClientToBanque(c, idBanque);
+	}
+
+	@Override
+	public Banque AddEmployeToBanque(Employe e, Long idBanque) {
+		// TODO Auto-generated method stub
+		return dao.AddEmployeToBanque(e, idBanque);
 	}
 
 }

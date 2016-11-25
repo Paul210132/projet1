@@ -28,7 +28,13 @@ public class OperationServiceImpl implements IOperationService{
 		LOGGER.info("<---------- Operation added------->");
 		return dao.save(entity);
 	}
-
+	
+	@Override
+	public Operation save(Operation operation, Long idEmploye, Long idCompte) {
+		LOGGER.info("<---------- Operation associated to Employe and Compte------->");
+		return dao.save(operation, idEmploye, idCompte);
+	}	
+	
 	@Override
 	public Operation update(Operation entity) throws OperationExistanteException {
 		int i = 0;
@@ -90,9 +96,13 @@ public class OperationServiceImpl implements IOperationService{
 	@Override
 	public Operation versement(Long idCompteC, Long idEmploye, Double montant) {
 		Operation o = new Versement(date, montant);
+		LOGGER.info("<---------- Versement instancié- Montant = "+montant+"------>");
 		dao.save(o, idEmploye, idCompteC);
+		LOGGER.info("<---------- Versement associé- Employe = "+idEmploye+"---Compte = "+idCompteC+"--->");
 		Compte compteC = dao.getCompte(idCompteC);
 		compteC.setSolde(compteC.getSolde()+montant);
+		LOGGER.info("<---------- Nouveau Solde = "+compteC.getSolde()+"€------>");
+		
 		return o;
 	}
 
@@ -105,6 +115,9 @@ public class OperationServiceImpl implements IOperationService{
 		if(compteD.getClass().getSimpleName().equals("CompteCourant"))
 		{
 			Double decouvert = compteD.getCalcul();
+			
+			boolean b = nouveauSolde > decouvert;
+			LOGGER.info("decouvert = €"+decouvert+" | nouveauSolde > decouvert :"+b);
 			if(nouveauSolde > decouvert)
 			{
 				compteD.setSolde(nouveauSolde);
@@ -129,8 +142,19 @@ public class OperationServiceImpl implements IOperationService{
 	@Override
 	public Operation virement(Long idCompteD, Long idCompteC, Long idEmploye, Double montant) throws SoldeInsuffisantException {
 		Operation o = new Virement(date, montant);
+		LOGGER.info("<-------------Instanciation Virement --------------->");
 		versement(idCompteC, idEmploye, montant);
+		LOGGER.info("<-------------Credit CompteC --------------->");
 		retrait(idCompteD, idEmploye, montant);
+		LOGGER.info("<-------------Debit CompteD --------------->");
 		return o;
-	}	
+	}
+
+	@Override
+	public Compte getCompte(Long id) {
+		// TODO Auto-generated method stub
+		return dao.getCompte(id);
+	}
+
+	
 }

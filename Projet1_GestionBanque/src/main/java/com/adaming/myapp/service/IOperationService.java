@@ -2,26 +2,32 @@ package com.adaming.myapp.service;
 
 import java.util.List;
 
+import com.adaming.myapp.entities.Compte;
 import com.adaming.myapp.entities.Operation;
 import com.adaming.myapp.exceptions.OperationExistanteException;
 import com.adaming.myapp.exceptions.SoldeInsuffisantException;
 
 public interface IOperationService {
 	
-	public Operation save(Operation entity);
+	 Operation save(Operation entity);
 	
-	public Operation update(Operation entity) throws OperationExistanteException;
+	 Operation update(Operation entity) throws OperationExistanteException;
 	
-	public Operation getOne(Long id) throws OperationExistanteException;
+	 Operation getOne(Long id) throws OperationExistanteException;
 	
-	public List<Operation> getAll();
+	 List<Operation> getAll();
 	
-	public Operation remove(Long id) throws OperationExistanteException;
+	 Operation save(Operation operation, Long idEmploye, Long idCompte);
 	
-	public Operation versement(Long idCompteC, Long idEmploye, Double montant);
+	 Operation remove(Long id) throws OperationExistanteException;
 	
-	public Operation retrait(Long idCompteD, Long idEmploye, Double montant) throws SoldeInsuffisantException;
+	 Operation versement(Long idCompteC, Long idEmploye, Double montant);
 	
-	public Operation virement(Long idCompteD, Long idCompteC, Long idEmploye, Double montant) throws SoldeInsuffisantException;
+	 Operation retrait(Long idCompteD, Long idEmploye, Double montant) throws SoldeInsuffisantException;
+	
+	 Operation virement(Long idCompteD, Long idCompteC, Long idEmploye, Double montant) throws SoldeInsuffisantException;
+
+	 Compte getCompte(Long id);
+	 
 }
 	

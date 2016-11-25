@@ -34,23 +34,12 @@ public abstract class Compte implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Compte(Long id, Date dateCreation, Double solde, List<Operation> operations, Client client,
-			Employe employe) {
-		super();
-		this.id = id;
-		this.dateCreation = dateCreation;
-		this.solde = solde;
-		this.operations = operations;
-		this.client = client;
-		this.employe = employe;
-	}
-	public Compte(Date dateCreation, Double solde, Client client) {
+	public Compte(Date dateCreation, Double solde) {
 		super();
 		this.dateCreation = dateCreation;
 		this.solde = solde;
-		this.client = client;
 	}
-	
+
 	/*GETTERS-SETTERS*/
 	
 	public Long getId() {
@@ -91,6 +80,10 @@ public abstract class Compte implements Serializable{
 	}
 	
 	public abstract Double getCalcul();
-	
-	
+	public abstract void setCalcul(Double d);
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Compte n°"+getId()+" | Solde : "+getSolde()+" €";
+	}
 }

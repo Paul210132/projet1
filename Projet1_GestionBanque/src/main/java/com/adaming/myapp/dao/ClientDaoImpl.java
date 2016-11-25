@@ -5,9 +5,11 @@ import java.util.List;
 import javax.persistence.Query;
 
 import com.adaming.myapp.entities.Client;
+import com.adaming.myapp.entities.Compte;
 import com.adaming.myapp.persistence.AbstractJPA;
 
 public class ClientDaoImpl extends AbstractJPA<Client> implements IClientDao{
+
 
 	@Override
 	public Client save(Client entity) {
@@ -48,6 +50,12 @@ public class ClientDaoImpl extends AbstractJPA<Client> implements IClientDao{
 		return query.getResultList();
 	}
 
-	
+	@Override
+	public Client AddCompteToClient(Compte cp, Long idClient) {
+		Client cli = em.find(Client.class,idClient);
+		cli.getComptes().add(cp);
+		return saveAbstractJpa(cli);
+	}
+
 }
 

@@ -19,5 +19,5 @@ public interface IEmployeService {
 	
 	public List<Employe> getEmploye(Long idGroupe) throws EmployeExistantException;
 	
-	
+
 }

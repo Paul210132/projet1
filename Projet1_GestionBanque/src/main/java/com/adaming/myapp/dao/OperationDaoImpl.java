@@ -14,11 +14,16 @@ public class OperationDaoImpl extends AbstractJPA<Operation> implements IOperati
 		
 		Employe employe = em.find(Employe.class, idEmploye);
 		Compte compte = em.find(Compte.class, idCompte);
-		
 		operation.setEmploye(employe);
+//		List<Compte> comptes = operation.getComptes();
+//		comptes.add(compte);
+//		operation.setComptes(comptes);
 		operation.getComptes().add(compte);
-		
-		return saveAbstractJpa(operation);
+		System.out.println("Employe "+employe.getNom()+" va réaliser l'opération "+operation.getClass().getSimpleName()+" sur le compte n°"+compte.getId());
+		for(Compte c : operation.getComptes()){
+			System.out.println(c.toString());
+		}
+		return operation;
 	}
 
 	@Override

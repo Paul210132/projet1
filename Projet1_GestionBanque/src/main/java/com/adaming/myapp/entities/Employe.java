@@ -56,5 +56,9 @@ public class Employe implements Serializable{
 	public void setComptes(List<Compte> comptes) {
 		this.comptes = comptes;
 	}
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Employe "+getNom()+" id "+getId();
+	}
 }

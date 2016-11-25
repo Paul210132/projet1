@@ -1,6 +1,7 @@
 package com.adaming.myapp.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class Operation implements Serializable{
 	private Employe employe;
 	@ManyToMany
 	@JoinTable(name="OPERATIONS_CPT")
-	private List<Compte> comptes;
+	private List<Compte> comptes = new ArrayList<Compte>();
 	
 	/*CONSTRUCTORS*/
 	

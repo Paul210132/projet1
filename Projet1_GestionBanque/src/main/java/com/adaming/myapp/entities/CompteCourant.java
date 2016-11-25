@@ -16,22 +16,16 @@ public class CompteCourant extends Compte{
 	
 	/*CONSTRUCTORS*/
 	
-	public CompteCourant(Long id, Date dateCreation, Double solde, List<Operation> operations, Client client,
-			Employe employe) {
-		super(id, dateCreation, solde, operations, client, employe);
-		// TODO Auto-generated constructor stub
-	}
 	public CompteCourant() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public CompteCourant(Date dateCreation, Double solde, Client client) {
-		super(dateCreation, solde, client);
+	public CompteCourant(Date dateCreation, Double solde) {
+		super(dateCreation, solde);
 		// TODO Auto-generated constructor stub
 	}
-	public CompteCourant(Long id, Date dateCreation, Double solde, List<Operation> operations, Client client,
-			Employe employe, Double decouvert) {
-		super(id, dateCreation, solde, operations, client, employe);
+	public CompteCourant(Double decouvert) {
+		super();
 		this.decouvert = decouvert;
 	}
 
@@ -40,6 +34,7 @@ public class CompteCourant extends Compte{
 	public Double getDecouvert() {
 		return decouvert;
 	}
+	
 	public void setDecouvert(Double decouvert) {
 		this.decouvert = decouvert;
 	}
@@ -47,6 +42,11 @@ public class CompteCourant extends Compte{
 	public Double getCalcul() {
 		// TODO Auto-generated method stub
 		return decouvert;
+	}
+	@Override
+	public void setCalcul(Double decouvert) {
+		// TODO Auto-generated method stub
+		this.decouvert = decouvert;
 	}
 
 }

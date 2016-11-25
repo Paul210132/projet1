@@ -9,4 +9,5 @@ public interface IOperationDao extends IGenericDao<Operation>{
 	
 	public Compte getCompte(Long id);
 	
+	
 }

@@ -3,6 +3,7 @@ package com.adaming.myapp.service;
 import java.util.List;
 
 import com.adaming.myapp.entities.Client;
+import com.adaming.myapp.entities.Compte;
 import com.adaming.myapp.exceptions.ClientExistantException;
 
 public interface IClientService {
@@ -18,5 +19,7 @@ public interface IClientService {
 	public Client remove(Long id) throws ClientExistantException;
 
 	public List<Client> getClient(String mc);
+	
+	Client AddCompteToClient(Compte c, Long idClient);
 	
 }

@@ -10,8 +10,6 @@ import javax.persistence.*;
 @DiscriminatorValue("VER")
 public class Versement extends Operation{
 
-
-
 	public Versement() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -25,5 +25,4 @@ public class Virement extends Operation{
 		// TODO Auto-generated constructor stub
 	}
 
-
 }

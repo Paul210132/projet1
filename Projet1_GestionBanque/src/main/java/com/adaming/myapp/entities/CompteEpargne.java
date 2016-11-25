@@ -20,26 +20,21 @@ public class CompteEpargne extends Compte{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public CompteEpargne(Long id, Date dateCreation, Double solde, List<Operation> operations, Client client,
-			Employe employe) {
-		super(id, dateCreation, solde, operations, client, employe);
+	public CompteEpargne(Date dateCreation, Double solde) {
+		super(dateCreation, solde);
 		// TODO Auto-generated constructor stub
 	}
-	public CompteEpargne(Date dateCreation, Double solde, Client client) {
-		super(dateCreation, solde, client);
-		// TODO Auto-generated constructor stub
-	}
-	public CompteEpargne(Long id, Date dateCreation, Double solde, List<Operation> operations, Client client,
-			Employe employe, Double tInteret) {
-		super(id, dateCreation, solde, operations, client, employe);
+	public CompteEpargne(Double tInteret) {
+		super();
 		this.tInteret = tInteret;
 	}
-
+	
 	/*GETTERS&SETTERS*/
 	
 	public Double gettInteret() {
 		return tInteret;
 	}
+
 	public void settInteret(Double tInteret) {
 		this.tInteret = tInteret;
 	}
@@ -47,6 +42,11 @@ public class CompteEpargne extends Compte{
 	public Double getCalcul() {
 		// TODO Auto-generated method stub
 		return tInteret;
+	}
+	@Override
+	public void setCalcul(Double tInteret) {
+		this.tInteret = tInteret;
+		
 	}
 
 }

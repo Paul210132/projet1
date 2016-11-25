@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.adaming.myapp.dao.IClientDao;
 import com.adaming.myapp.entities.Client;
+import com.adaming.myapp.entities.Compte;
 import com.adaming.myapp.exceptions.ClientExistantException;
 @Transactional
 public class ClientServiceImpl implements IClientService{
@@ -90,5 +91,11 @@ public class ClientServiceImpl implements IClientService{
 	public List<Client> getClient(String mc) {
 		// TODO Auto-generated method stub
 		return dao.getClient(mc);
+	}
+
+	@Override
+	public Client AddCompteToClient(Compte c, Long idClient) {
+		// TODO Auto-generated method stub
+		return dao.AddCompteToClient(c, idClient);
 	}
 }

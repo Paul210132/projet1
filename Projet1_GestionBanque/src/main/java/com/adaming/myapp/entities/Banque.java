@@ -15,7 +15,7 @@ public class Banque implements Serializable{
 	private Long id;
 	private String nom;
 	private String adresse;
-	private int CP;
+	private int cP;
 	@OneToMany
 	@JoinColumn(name="EMPLOYES_BQ")
 	private List<Employe> employes;
@@ -32,23 +32,13 @@ public class Banque implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Banque(Long id, String nom, String adresse, int cP, List<Employe> employes, List<Client> clients,
-			List<Compte> comptes) {
+	public Banque(String nom, String adresse, int cP) {
 		super();
-		this.id = id;
 		this.nom = nom;
 		this.adresse = adresse;
-		CP = cP;
-		this.employes = employes;
-		this.clients = clients;
-		this.comptes = comptes;
+		this.cP = cP;
 	}
-	public Banque(String nom, List<Employe> employes, List<Compte> comptes) {
-		super();
-		this.nom = nom;
-		this.employes = employes;
-		this.comptes = comptes;
-	}
+
 		
 	/*GETTERS-SETTERS*/	
 
@@ -70,11 +60,11 @@ public class Banque implements Serializable{
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	public int getCP() {
-		return CP;
+	public int getcP() {
+		return cP;
 	}
-	public void setCP(int cP) {
-		CP = cP;
+	public void setcP(int cP) {
+		this.cP = cP;
 	}
 	public List<Employe> getEmployes() {
 		return employes;
