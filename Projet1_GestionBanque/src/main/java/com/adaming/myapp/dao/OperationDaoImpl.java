@@ -23,7 +23,7 @@ public class OperationDaoImpl extends AbstractJPA<Operation> implements IOperati
 		for(Compte c : operation.getComptes()){
 			System.out.println(c.toString());
 		}
-		return operation;
+		return saveAbstractJpa(operation);
 	}
 
 	@Override

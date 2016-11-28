@@ -1,46 +1,24 @@
-package com.adaming.myapp.entities;
+package com.adaming.myapp.model;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.*;
+import com.adaming.myapp.entities.Client;
+import com.adaming.myapp.entities.Employe;
+import com.adaming.myapp.entities.Operation;
 
-@SuppressWarnings("serial")
-@Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="TYPE",discriminatorType=DiscriminatorType.STRING)
-public abstract class Compte implements Serializable{
+public class CompteModel {
 
 	
-	/*ATTRIBUTES*/
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private Date dateCreation;	
 	private Double solde;
-	@ManyToMany(mappedBy="comptes", fetch = FetchType.EAGER)
-	private List<Operation> operations;
-	@ManyToOne
-	@JoinColumn(name="COMPTES_CL")
-	private Client client;
-	@ManyToOne
-	@JoinTable(name="COMPTES_EMPL")
-	private Employe employe;
-	/*CONSTRUCTORS*/
-	
-	public Compte() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public Compte(Date dateCreation, Double solde) {
-		super();
-		this.dateCreation = dateCreation;
-		this.solde = solde;
-	}
+	private String exceptionCompte; 
 
-	/*GETTERS-SETTERS*/
+	private List<Operation> operations;
+	private Client client;
+	private Employe employe;
+	
 	
 	public Long getId() {
 		return id;
@@ -78,12 +56,11 @@ public abstract class Compte implements Serializable{
 	public void setEmploye(Employe employe) {
 		this.employe = employe;
 	}
-	
-	public abstract Double getCalcul();
-	public abstract void setCalcul(Double d);
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return "Compte n°"+getId()+" | Solde : "+getSolde()+" €";
+	public String getExceptionCompte() {
+		return exceptionCompte;
 	}
+	public void setExceptionCompte(String exceptionCompte) {
+		this.exceptionCompte = exceptionCompte;
+	}
+	
 }
